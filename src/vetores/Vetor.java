@@ -3,11 +3,21 @@ package vetores;
 public class Vetor {
 
 	private String[] elementos;
-	private int tamanho;
+	private int tamanho;                                      //PODEMOS CONTROLAR O TAMANHO DO VETOR 
 
 	public Vetor(int capacidade) {
 		this.elementos = new String[capacidade];
 		this.tamanho = 0;
+	}
+	
+	
+	public boolean adcionaEspecialista(String elemento) {
+		if(this.tamanho < this.elementos.length) {
+			this.elementos[this.tamanho]= elemento;
+			this.tamanho++;
+			return true;
+		}
+		return false;
 	}
 
 	public void adcionaSenior(String elemento) throws Exception {
