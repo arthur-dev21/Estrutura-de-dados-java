@@ -138,6 +138,7 @@ public class Vetor {
 	 * 
 	 * */
 	
+	//aumenta a capacidade
 	private void aumentaCapacidade() {
 		if(this.tamanho ==  this.elementos.length) {
 			String[]elementosNovos = new String[this.elementos.length*2];
@@ -148,5 +149,15 @@ public class Vetor {
 		}
 	}
 	
+	//remover um elemento mudando todos os elementos de lugar
+	public void remove(int posicao) {
+		if (!(posicao >= 0 && posicao < tamanho)) { 
+			throw new IllegalArgumentException("posicao invalida");
+		}
+		for(int i=posicao ; i<this.tamanho-1 ; i++) {
+			this.elementos[i]=this.elementos[i+1];
+		}
+        this.tamanho--;
+	}
 
 }
