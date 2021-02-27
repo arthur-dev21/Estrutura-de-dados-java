@@ -138,5 +138,15 @@ public class Vetor {
 	 * 
 	 * */
 	
+	private void aumentaCapacidade() {
+		if(this.tamanho ==  this.elementos.length) {
+			String[]elementosNovos = new String[this.elementos.length*2];
+			for(int i=0; i<this.elementos.length;i++) {
+				elementosNovos[i]=elementos[i];
+			}
+			this.elementos=elementosNovos;
+		}
+	}
+	
 
 }
